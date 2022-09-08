@@ -2,11 +2,13 @@ import React from 'react';
 import {Switch, Route, BrowserRouter} from "react-router-dom"
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
+import "../src/App.css"
 import Home from './components/Home';
 import NavBar from './components/NavBar';
 import About from './components/About';
 import Saccos from './components/Saccos';
 import ContactUs from './components/ContactUs';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
             <ContactUs />
           </Route>
         </Switch>
+        <Footer/>
       </BrowserRouter>
     </div>
 
