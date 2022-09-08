@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom"
+
 
 function Home() {
     return (
@@ -29,8 +31,11 @@ function Home() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h4>Our Services</h4>
-                            <div className="underline mb-3"></div>
+                            <h2>Why KeNTMS ?</h2>
+                            <p>KeTMS is an Integrated Fleet and Transportation Management System developed with
+                                the aim of enabling organizations to economically, easily and securely manage fleet and
+                                transportation process under one platform.
+                            </p>
                         </div>
 
                         <div className="col-md-3">
@@ -39,6 +44,9 @@ function Home() {
                                     <h6>Sacco Management</h6>
                                     <div className="sub-underline mb-3"></div>
                                     <p>To help saccos manage their fleet expenses, activities and request orders.</p>
+                                    <Link to="/saccos">
+                                    <button type="submit" className="btn btn-primary w-40">To see Saccos</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -49,6 +57,9 @@ function Home() {
                                     <h6>Driver Management</h6>
                                     <div className="sub-underline mb-3"></div>
                                     <p>To manage your driver and their activities</p>
+                                    <Link to="/saccos">
+                                    <button type="submit" className="btn btn-primary w-40">To see Saccos</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -59,6 +70,9 @@ function Home() {
                                     <h6>Trip Management</h6>
                                     <div className="sub-underline mb-3"></div>
                                     <p>To manage your fleet's trips and routes.</p>
+                                    <Link to="/saccos">
+                                    <button type="submit" className="btn btn-primary w-40">To see Saccos</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
