@@ -1,7 +1,5 @@
 import React from 'react';
 import {Switch, Route, BrowserRouter} from "react-router-dom"
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.bundle";
 import "../src/App.css"
 import Home from './components/Home';
 import NavBar from './components/NavBar';
