@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 
 function Home() {
@@ -26,7 +26,7 @@ function Home() {
             </div>
             {/* carousel section */}
 
-            {/* services section */}
+            {/* Why section */}
             <section className="py-5">
                 <div className="container">
                     <div className="row">
@@ -37,7 +37,9 @@ function Home() {
                                 transportation process under one platform.
                             </p>
                         </div>
+                         {/* Why section */}
 
+                         {/* cards section */}
                         <div className="col-md-3">
                             <div className="card shadow">
                                 <div className="card-body">
@@ -54,7 +56,7 @@ function Home() {
                         <div className="col-md-3">
                             <div className="card shadow">
                                 <div className="card-body">
-                                    <h6>Driver Management</h6>
+                                    <h6>Sacco Driver Management</h6>
                                     <div className="sub-underline mb-3"></div>
                                     <p>To manage your driver and their activities</p>
                                     <Link to="/saccos">
@@ -67,7 +69,7 @@ function Home() {
                         <div className="col-md-3">
                             <div className="card shadow">
                                 <div className="card-body">
-                                    <h6>Trip Management</h6>
+                                    <h6>Sacco Trip Management</h6>
                                     <div className="sub-underline mb-3"></div>
                                     <p>To manage your fleet's trips and routes.</p>
                                     <Link to="/saccos">
@@ -80,7 +82,7 @@ function Home() {
                         <div className="col-md-3">
                             <div className="card shadow">
                                 <div className="card-body">
-                                    <h6>Inventory Management</h6>
+                                    <h6>Sacco Inventory Management</h6>
                                     <div className="sub-underline mb-3"></div>
                                     <p>To keep track of all your tire and spare parts.</p>
                                 </div>
@@ -89,7 +91,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            {/* services section */}
+            {/* cards section */}
 
         </div>
     )
