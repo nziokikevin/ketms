@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from "react-router-dom";
 
 function Saccos() {
     const [saccos, setSaccos] = useState([]);
@@ -54,6 +55,7 @@ function Saccos() {
         setSaccos([...saccos, data])
     }
 
+
     return (
         <div>
              <form className="row g-3 m-3" onSubmit={handleSubmit}>
@@ -86,7 +88,7 @@ function Saccos() {
                                     </div>
                                     </div>
                                     <div className="col">
-                                    <div className="mb-2">
+                                    <div className="mb-2 m-3">
                                         <input type="submit" className="btn btn-outline-dark" value="Search" />
                                     </div>
                                     </div>            
@@ -121,6 +123,10 @@ function Saccos() {
                                 <td>{sacco.id}</td>
                                 <td>{sacco.name}</td>
                                 <td>{sacco.description}</td>
+                                <td><Link to={`/saccos/${sacco.id}`}>
+                                    <button type="button" className="btn btn-info">VIEW</button>
+                                    </Link>
+                                </td>
                                 <td>
                                     <button type="button" className="btn btn-danger" onClick={() => handleDelete(sacco.id)}>DELETE</button>
                                 </td>

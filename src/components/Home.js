@@ -59,9 +59,6 @@ function Home() {
                                     <h6>Sacco Driver Management</h6>
                                     <div className="sub-underline mb-6"></div>
                                     <p>To manage your driver and their activities</p>
-                                    <Link to="/saccos">
-                                    <button type="submit" className="btn btn-primary w-40">To see Saccos</button>
-                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -72,9 +69,6 @@ function Home() {
                                     <h6>Sacco Trip Management</h6>
                                     <div className="sub-underline mb-3"></div>
                                     <p>To manage your fleet's trips and routes.</p>
-                                    <Link to="/saccos">
-                                    <button type="submit" className="btn btn-primary w-40">To see Saccos</button>
-                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -15,7 +15,6 @@ function About() {
                             <h4>Our Company</h4>
                             <div className="underline mb-3"></div>
                             <p>KeNTMS is a logistics and shipping management software that helps businesses streamline operations related to dispatching, accounting, commissions, asset management, and more on a centralized platform. The automated workflow engine uses an IFTTT algorithm to update load details and statuses.</p>
-                            <p>AscendTMS is a logistics and shipping management software that helps businesses streamline operations related to dispatching, accounting, commissions, asset management, and more on a centralized platform. The automated workflow engine uses an IFTTT algorithm to update load details and statuses.</p>
                         </div>
                     </div>
                 </div>
@@ -30,14 +29,14 @@ function About() {
                             <h4>Our Vision</h4>
                             <div className="sub-underline mb-3"></div>
                             <p>
-                                The broader goals of using a TMS are to improve shipping efficiency, reduce costs, gain real-time supply chain visibility and ensure customer satisfaction.
+                                "To be a global leader in provision of transportation and logistics services for improved quality life."
                             </p>
                         </div>
                         <div className="col-md-6">
                             <h4>Our Mission</h4>
                             <div className="sub-underline mb-3"></div>
                             <p>
-                                The broader goals of using a TMS are to improve shipping efficiency, reduce costs, gain real-time supply chain visibility and ensure customer satisfaction.
+                                "To provide efficient, affordable and reliable transportation services for sustainable economic growth and development."
                             </p>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ import About from './components/About';
 import Saccos from './components/Saccos';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
+import ViewSacco from './components/ViewSacco';
 
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path = "/saccos">
             <Saccos />
+          </Route>
+          <Route exact path = "/saccos/:id">
+            <ViewSacco />
           </Route>
           <Route exact path = "/contact-us">
             <ContactUs />
