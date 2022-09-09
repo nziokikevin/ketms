@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Saccos() {
     const [saccos, setSaccos] = useState([]);
     const [search, setSearch] = useState('')
-    
+
+    // fetching of data
     useEffect(() => {
         fetch("http://localhost:9292/saccos")
             .then((r) => r.json())
             .then((saccos) => setSaccos(saccos));
     }, [])
 
+    // function that handles deleting of data
     function handleDelete(id) {
         fetch(`http://localhost:9292/saccos/${id}`, {
             method: "DELETE",
@@ -23,22 +25,23 @@ function Saccos() {
 
     }
 
+    // submission of data to the database.
     const [formData, setFormData] = useState({
         name: '',
         description: ''
     })
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault()
         fetch(`http://localhost:9292/saccos`, {
             method: "POST",
             headers: {
-                "Content-Type" : "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(formData),
         })
-        .then((r) => r.json())
-        .then((data) => registerSacco(data))
+            .then((r) => r.json())
+            .then((data) => registerSacco(data))
         setFormData(
             {
                 name: '',
@@ -47,22 +50,25 @@ function Saccos() {
         )
     }
 
-    function handleChange(e){
-        setFormData({...formData, [e.target.id]: e.target.value});
+    function handleChange(e) {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
     }
 
-    function registerSacco(data){
+    function registerSacco(data) {
         setSaccos([...saccos, data])
     }
 
 
     return (
         <div>
-             <form className="row g-3 m-3" onSubmit={handleSubmit}>
+            <section className="py-4 text-center bg-primary">
+                <h1 className="text-white">Sacco</h1>
+            </section>
+            <form className="row g-3 m-3" onSubmit={handleSubmit}>
                 <h2>Register a new sacco with us:</h2>
                 <div className="col-md-6 m-3">
                     <label className="form-label">Name of Sacco</label>
-                    <input type="text" className="form-control" id="name" onChange={handleChange} value={formData.name} required/>
+                    <input type="text" className="form-control" id="name" onChange={handleChange} value={formData.name} required />
                 </div>
                 <div className="col-md-6 m-3">
                     <label className="form-label">Enter description of sacco:</label>
@@ -75,64 +81,64 @@ function Saccos() {
             {/* // registering of a new sacco. */}
 
             {/* searching section */}
-                        <div className="row">
-                            <div className="col-md-6">
-                                <form className="row" >
-                                    <div className="col">
-                                    <div className="mb-2 m-3">
-                                        <input 
-                                        name="text"
-                                        value={search.text}
-                                        onChange={(e) => {setSearch(e.target.value)}}
-                                        type="text"className="form-control" placeholder="Search Names" />
-                                    </div>
-                                    </div>
-                                    <div className="col">
-                                    <div className="mb-2 m-3">
-                                        <input type="submit" className="btn btn-outline-dark" value="Search" />
-                                    </div>
-                                    </div>            
-                                </form>
+            <div className="row">
+                <div className="col-md-6">
+                    <form className="row" >
+                        <div className="col">
+                            <div className="mb-2 m-3">
+                                <input
+                                    name="text"
+                                    value={search.text}
+                                    onChange={(e) => { setSearch(e.target.value) }}
+                                    type="text" className="form-control" placeholder="Search Names" />
                             </div>
                         </div>
+                        <div className="col">
+                            <div className="mb-2 m-3">
+                                <input type="submit" className="btn btn-outline-dark" value="Search" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
             {/* searching section */}
 
 
-            {/* displaying of saccos form backend */}
+            {/* displaying of saccos from backend */}
 
             <section>
                 {
                     saccos.length > 0 && saccos.filter((sacco) => {
-                        return(
+                        return (
                             sacco.name.toLowerCase().includes(search.toLowerCase())
                         )
                     }).map((sacco) => {
-                        return(
+                        return (
                             <table className="table table-striped table-hover m-3 align-middle" key={sacco.id} >
-                            <thead>
-                                <tr>
-                                <th scope="col">Sacco_id</th>
-                                <th scope="col">Name of sacco</th>
-                                <th scope="col">Description</th>
-                                </tr>
-                            </thead>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sacco_id</th>
+                                        <th scope="col">Name of sacco</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                <tr>
-                                <td>{sacco.id}</td>
-                                <td>{sacco.name}</td>
-                                <td>{sacco.description}</td>
-                                <td><Link to={`/saccos/${sacco.id}`}>
-                                    <button type="button" className="btn btn-info">VIEW</button>
-                                    </Link>
-                                </td>
-                                <td>
-                                    <button type="button" className="btn btn-danger" onClick={() => handleDelete(sacco.id)}>DELETE</button>
-                                </td>
-                                </tr>
-                            </tbody>
-                            </table>                   
+                                <tbody>
+                                    <tr>
+                                        <td>{sacco.id}</td>
+                                        <td>{sacco.name}</td>
+                                        <td>{sacco.description}</td>
+                                        <td><Link to={`/saccos/${sacco.id}`}>
+                                            <button type="button" className="btn btn-info">VIEW</button>
+                                        </Link>
+                                        </td>
+                                        <td>
+                                            <button type="button" className="btn btn-danger" onClick={() => handleDelete(sacco.id)}>DELETE</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         )
                     })
                 }

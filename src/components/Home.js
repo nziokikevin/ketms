@@ -59,6 +59,9 @@ function Home() {
                                     <h6>Sacco Driver Management</h6>
                                     <div className="sub-underline mb-6"></div>
                                     <p>To manage your driver and their activities</p>
+                                    <Link to="/drivers">
+                                    <button type="submit" className="btn btn-primary w-40">To see Drivers</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
