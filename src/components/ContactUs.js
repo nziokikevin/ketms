@@ -12,7 +12,8 @@ function ContactUs() {
                     <div className="row">
                         {/* google map section */}
                         <div className="col-md-8">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8170062407335!2d36.81640611415834!3d-1.2836756990637177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11efc0b203dd%3A0x5376f1de78cf155a!2sNairobi%20C%20B%20D!5e0!3m2!1sen!2ske!4v1662629697028!5m2!1sen!2ske" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                         {/* eslint-disable-next-line */}
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8170062407335!2d36.81640611415834!3d-1.2836756990637177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11efc0b203dd%3A0x5376f1de78cf155a!2sNairobi%20C%20B%20D!5e0!3m2!1sen!2ske!4v1662629697028!5m2!1sen!2ske" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="googleMaps">Google maps Location</iframe>
                         </div>
                         {/* the reviews section */}
                         <div className="col-md-4">

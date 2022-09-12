@@ -17,6 +17,7 @@ KeNTMS is a web application that deals with a transport management system. One i
 
 5. The web application is now available for interaction with the user.
 
+
 ## Copyright and License Information:
                        Copyright (c) [2022] [Kevin Nzioki]
 
