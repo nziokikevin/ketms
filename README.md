@@ -17,6 +17,8 @@ KeNTMS is a web application that deals with a transport management system. One i
 
 5. The web application is now available for interaction with the user.
 
+## Link to live site
+Click this link to view the live application: https://main--warm-cranachan-0ff969.netlify.app/
 
 ## Copyright and License Information:
                        Copyright (c) [2022] [Kevin Nzioki]
