@@ -4,7 +4,7 @@
 
 ## Project Description.
 
-KeNTMS is a web application that deals with a transport management system. One is able to view the creat, add, view and delete data from the management system. The project is aimed to manage public transport saccos.
+KeNTMS is a web application that deals with a transport management system. One is able to create, add, view and delete data from the management system. The project is aimed to manage public transport saccos.
 
 ## Project setup instructions:
 1. Clone the project on your local machine from this repo : https://github.com/nziokikevin/ketms
