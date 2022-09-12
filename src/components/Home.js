@@ -32,7 +32,7 @@ function Home() {
                     <div className="row">
                         <div className="col-md-12">
                             <h2>Why KeNTMS ?</h2>
-                            <p>KeTMS is an Integrated Fleet and Transportation Management System developed with
+                            <p>KeNTMS is an Integrated Fleet and Transportation Management System developed with
                                 the aim of enabling organizations to economically, easily and securely manage fleet and
                                 transportation process under one platform.
                             </p>

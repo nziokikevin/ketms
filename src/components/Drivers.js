@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 function Drivers() {
     const [drivers, setDrivers] = useState([]);
     const [loading, setLoading] = useState(false)
 
-    const [search, setSearch] = useState('');
-
+    // fetching of data
     useEffect(() => {
         fetch("http://localhost:9292/drivers")
             .then((r) => r.json())
@@ -19,6 +17,7 @@ function Drivers() {
               });
     }, [])
 
+    // function for deleting
     function handleDelete(id) {
         fetch(`http://localhost:9292/drivers/${id}`, {
             method: "DELETE",
@@ -33,12 +32,10 @@ function Drivers() {
     const [formData, setFormData] = useState({
         name: '',
         license_no: '',
-        identity_card_no: '',
-        vehicle_id: '',
-        route_id: '',
-        sacco_id: ''
+        identity_card_no: ''  
     })
 
+    // function for handling submission
     function handleSubmit(e) {
         e.preventDefault()
         fetch(`http://localhost:9292/drivers`, {
@@ -54,10 +51,7 @@ function Drivers() {
             {
                 name: '',
                 license_no: '',
-                identity_card_no: '',
-                vehicle_id: '',
-                route_id: '',
-                sacco_id: ''
+                identity_card_no: ''   
             }
         )
     }
@@ -93,50 +87,14 @@ function Drivers() {
                     <label className="form-label">Identity Card number</label>
                     <input type="text" className="form-control" id="identity_card_no" onChange={handleChange} value={formData.identity_card_no} required />
                 </div>
-                <div className="col-md-6 m-3">
-                    <label className="form-label">Vehicle</label>
-                    <input type="text" className="form-control" id="vehicle_id" onChange={handleChange} value={formData.vehicle_id} required />
-                </div>
-                <div className="col-md-6 m-3">
-                    <label className="form-label">Route</label>
-                    <input type="text" className="form-control" id="route_id" onChange={handleChange} value={formData.route_id} required />
-                </div>
-                <div className="col-md-6 m-3">
-                    <label className="form-label">Sacco</label>
-                    <input type="text" className="form-control" id="sacco_id" onChange={handleChange} value={formData.sacco_id} required />
-                </div>
                 <div className="col-12 m-3">
                     <button type="submit" className="btn btn-primary">Register</button>
                 </div>
             </form>
-            {/* // registering of a new sacco. */}
-
-            {/* searching section */}
-            <div className="row">
-                <div className="col-md-6">
-                    <form className="row" >
-                        <div className="col">
-                            <div className="mb-2 m-3">
-                                <input
-                                    name="text"
-                                    value={search.text}
-                                    onChange={(e) => { setSearch(e.target.value) }}
-                                    type="text" className="form-control" placeholder="Search Names" />
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="mb-2 m-3">
-                                <input type="submit" className="btn btn-outline-dark" value="Search" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            {/* searching section */}
+            {/* // registering of a new driver. */}
 
 
-            {/* displaying of saccos from backend */}
+            {/* displaying of drivers from backend */}
 
             <section>
                 {
@@ -149,9 +107,6 @@ function Drivers() {
                                         <th scope="col">Name</th>
                                         <th scope="col">License</th>
                                         <th scope="col">ID card</th>
-                                        <th scope="col">Vehicle</th>
-                                        <th scope="col">Route</th>
-                                        <th scope="col">Sacco</th>
                                     </tr>
                                 </thead>
 
@@ -161,13 +116,10 @@ function Drivers() {
                                         <td>{driver.name}</td>
                                         <td>{driver.license_no}</td>
                                         <td>{driver.identity_card_no}</td>
-                                        <td>{driver.vehicle_id}</td>
-                                        <td>{driver.route}</td>
-                                        <td>{driver.sacco}</td>
-                                        <td><Link to={`/drivers/${driver.id}`}>
+                                        {/* <td><Link to={`/drivers/${driver.id}`}>
                                             <button type="button" className="btn btn-info">VIEW</button>
                                         </Link>
-                                        </td>
+                                        </td> */}
                                         <td>
                                             <button type="button" className="btn btn-danger" onClick={() => handleDelete(driver.id)}>DELETE</button>
                                         </td>
